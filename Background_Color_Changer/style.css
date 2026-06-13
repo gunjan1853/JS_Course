@@ -1,0 +1,54 @@
+body{
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+#red{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 10px;
+    cursor: pointer;
+}
+#blue{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 10px;
+    cursor: pointer;
+}   
+#green{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    margin: 10px;
+    cursor: pointer;
+}
+#yellow{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#orange{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin: 10px;
+    cursor: pointer;
+}
