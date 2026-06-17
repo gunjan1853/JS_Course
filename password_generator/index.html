@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Password Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div class="theme">
+    <button id="themeBtn">🌙</button>
+</div>
+    <div class="container">
+      
+
+        <h1>Password Generator</h1>
+
+        <div class="password-box">
+
+            <input type="text" id="password" readonly>
+
+            <button id="copyBtn">Copy</button>
+
+        </div>
+
+        <div class="length">
+
+            <label>Password Length :
+                <span id="lengthValue">12</span>
+            </label>
+
+            <input type="range" min="4" max="20" value="12" id="length">
+
+        </div>
+
+        <div class="options">
+
+            <div>
+                <input type="checkbox" id="upper" checked>
+                <label>Uppercase</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="lower" checked>
+                <label>Lowercase</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="number" checked>
+                <label>Numbers</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="symbol">
+                <label>Symbols</label>
+            </div>
+
+        </div>
+
+        <button class="generate" id="generateBtn">
+            Generate Password
+        </button>
+
+        <div class="strength">
+
+            <p>Password Strength</p>
+
+            <div class="bar">
+
+                <div class="fill" id="fill"></div>
+
+            </div>
+
+            <h3 id="status">Medium</h3>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
