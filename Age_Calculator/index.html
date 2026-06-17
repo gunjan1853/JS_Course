@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--Theme Toggle Button  -->
+    <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+
+    <!-- Main Container  -->
+    <div class="container">
+
+        <!-- Header  -->
+        <div class="header">
+            <h1>Age Calculator</h1>
+            <p>Find out your exact age in years, months, and days</p>
+        </div>
+
+        <!--Today's Date Display -->
+        <div class="today-date" id="todayDate">
+            <span class="label">Today's Date</span>
+            <span class="date-value" id="dateValue">--</span>
+        </div>
+
+        <!-- Input Section  -->
+        <div class="input-section">
+            <label for="dobInput">Date of Birth</label>
+            <input type="date" id="dobInput">
+
+            <!--  Error Message  -->
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <!-- Button Row  -->
+        <div class="button-row">
+            <button id="calcBtn" class="btn btn-primary">Calculate Age</button>
+            <button id="resetBtn" class="btn btn-secondary">Reset</button>
+        </div>
+
+        <!-- Result Card  -->
+        <div id="resultCard" class="result-card hidden">
+            <h2>Your Age</h2>
+            <div class="result-row">
+                <div class="result-box">
+                    <span class="result-number" id="yearsDisplay">0</span>
+                    <span class="result-label">Years</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-number" id="monthsDisplay">0</span>
+                    <span class="result-label">Months</span>
+                </div>
+                <div class="result-box">
+                    <span class="result-number" id="daysDisplay">0</span>
+                    <span class="result-label">Days</span>
+                </div>
+            </div>
+
+            <!-- Bonus Info Section -->
+            <div class="bonus-info">
+                <div class="info-item">
+                    <span class="info-label">Days Lived</span>
+                    <span class="info-value" id="daysLived">--</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Next Birthday</span>
+                    <span class="info-value" id="nextBirthday">--</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Age Category</span>
+                    <span class="info-value" id="ageCategory">--</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Birthday Wish</span>
+                    <span class="info-value" id="birthdayWish">--</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
