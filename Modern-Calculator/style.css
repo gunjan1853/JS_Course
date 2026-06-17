@@ -1,0 +1,429 @@
+/* ===== CSS Variables - Light Theme (Default) ===== */
+:root {
+  --bg-primary: #e8ecf1;
+  --bg-calculator: #ffffff;
+  --bg-display: #f8f9fc;
+  --text-primary: #1a1a2e;
+  --text-secondary: #6b7280;
+  --text-result: #1a1a2e;
+  --btn-number-bg: #f0f2f5;
+  --btn-number-hover: #e4e7ec;
+  --btn-number-text: #1a1a2e;
+  --btn-operator-bg: #dbeafe;
+  --btn-operator-hover: #bfdbfe;
+  --btn-operator-text: #2563eb;
+  --btn-equal-bg: #2563eb;
+  --btn-equal-hover: #1d4ed8;
+  --btn-equal-text: #ffffff;
+  --btn-clear-bg: #fee2e2;
+  --btn-clear-hover: #fecaca;
+  --btn-clear-text: #dc2626;
+  --btn-del-bg: #fef3c7;
+  --btn-del-hover: #fde68a;
+  --btn-del-text: #d97706;
+  --history-bg: #ffffff;
+  --history-item-bg: #f8f9fc;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  --shadow-btn: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --border-radius: 16px;
+  --btn-radius: 12px;
+  --accent: #2563eb;
+}
+
+/* ===== CSS Variables - Dark Theme ===== */
+body.dark {
+  --bg-primary: #0f172a;
+  --bg-calculator: #1e293b;
+  --bg-display: #0f172a;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-result: #f1f5f9;
+  --btn-number-bg: #334155;
+  --btn-number-hover: #475569;
+  --btn-number-text: #f1f5f9;
+  --btn-operator-bg: #1e3a5f;
+  --btn-operator-hover: #1e40af;
+  --btn-operator-text: #60a5fa;
+  --btn-equal-bg: #2563eb;
+  --btn-equal-hover: #1d4ed8;
+  --btn-equal-text: #ffffff;
+  --btn-clear-bg: #3b1a1a;
+  --btn-clear-hover: #5c2626;
+  --btn-clear-text: #f87171;
+  --btn-del-bg: #3b2e1a;
+  --btn-del-hover: #5c4726;
+  --btn-del-text: #fbbf24;
+  --history-bg: #1e293b;
+  --history-item-bg: #0f172a;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  --shadow-btn: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* ===== Container ===== */
+.container {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+
+/* ===== Theme Toggle ===== */
+.theme-toggle {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: var(--bg-calculator);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Calculator ===== */
+.calculator {
+  background: var(--bg-calculator);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== Display ===== */
+.display {
+  background: var(--bg-display);
+  border-radius: var(--btn-radius);
+  padding: 20px;
+  margin-bottom: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.expression {
+  font-size: 16px;
+  color: var(--text-secondary);
+  word-break: break-all;
+  text-align: right;
+  min-height: 24px;
+  width: 100%;
+  transition: color 0.3s ease;
+}
+
+.result {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-result);
+  word-break: break-all;
+  text-align: right;
+  width: 100%;
+  margin-top: 4px;
+  transition: color 0.3s ease;
+}
+
+/* ===== Buttons Grid ===== */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ===== Button Base ===== */
+.btn {
+  border: none;
+  padding: 18px 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-btn);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.btn:active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: var(--btn-radius);
+}
+
+/* ===== Button Types ===== */
+.btn-number {
+  background: var(--btn-number-bg);
+  color: var(--btn-number-text);
+}
+
+.btn-number:hover {
+  background: var(--btn-number-hover);
+}
+
+.btn-operator {
+  background: var(--btn-operator-bg);
+  color: var(--btn-operator-text);
+}
+
+.btn-operator:hover {
+  background: var(--btn-operator-hover);
+}
+
+.btn-equal {
+  background: var(--btn-equal-bg);
+  color: var(--btn-equal-text);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-equal:hover {
+  background: var(--btn-equal-hover);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+}
+
+.btn-clear {
+  background: var(--btn-clear-bg);
+  color: var(--btn-clear-text);
+}
+
+.btn-clear:hover {
+  background: var(--btn-clear-hover);
+}
+
+.btn-del {
+  background: var(--btn-del-bg);
+  color: var(--btn-del-text);
+}
+
+.btn-del:hover {
+  background: var(--btn-del-hover);
+}
+
+/* Zero button spans 2 columns */
+.btn-zero {
+  grid-column: span 2;
+}
+
+/* ===== Keyboard Press Highlight ===== */
+.btn.pressed {
+  transform: scale(0.93);
+  filter: brightness(0.9);
+}
+
+/* ===== History Section ===== */
+.history {
+  background: var(--history-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+  padding: 20px;
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.history-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.clear-history-btn {
+  background: none;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-secondary);
+  padding: 4px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.clear-history-btn:hover {
+  background: var(--btn-clear-bg);
+  color: var(--btn-clear-text);
+  border-color: var(--btn-clear-text);
+}
+
+.history-list {
+  overflow-y: auto;
+  flex: 1;
+  max-height: 180px;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.history-empty {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  background: var(--history-item-bg);
+  border-radius: 10px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  animation: slideIn 0.2s ease;
+}
+
+.history-item .history-expr {
+  color: var(--text-secondary);
+}
+
+.history-item .history-result {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ===== Animations ===== */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .calculator {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .btn {
+    padding: 14px 8px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .result {
+    font-size: 28px;
+  }
+
+  .expression {
+    font-size: 14px;
+  }
+
+  .theme-toggle {
+    top: -44px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .btn {
+    padding: 12px 6px;
+    font-size: 16px;
+  }
+
+  .buttons {
+    gap: 6px;
+  }
+
+  .result {
+    font-size: 24px;
+  }
+
+  .calculator {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 440px;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px) scale(1.04);
+  }
+}
